@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nodo 3 — La sombra tras los muros — La Voz de la Fortaleza Invernal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* =========================================================
+       La Voz de la Fortaleza Invernal — Estilos integrados en el documento HTML
+       Autor: Baltasar Moreno
+       Tipografías de Google: Cinzel (títulos) y Lora (cuerpo/enlaces)
+       ========================================================= */
+
+    :root {
+      --fondo-noche: #11161d;
+      --fondo-tarjeta: #19202a;
+      --fondo-boton: #202936;
+      --fondo-boton-hover: #2a3647;
+      --borde-piedra: rgba(218, 190, 134, 0.24);
+      --oro-ocre: #e5c98b;
+      --oro-suave: #f2dfb3;
+      --plata-hielo: #c8d6e5;
+      --nieve-texto: #e9eef4;
+      --gris-niebla: #9baabf;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1f2836 0%, var(--fondo-noche) 70%);
+      color: var(--nieve-texto);
+      font-family: 'Lora', Georgia, serif;
+      min-height: 100vh;
+      padding: 2.5rem 1.25rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .contenedor {
+      width: 100%;
+      max-width: 820px;
+      background-color: var(--fondo-tarjeta);
+      border: 1px solid var(--borde-piedra);
+      border-radius: 10px;
+      padding: 2.5rem 2.75rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    header {
+      border-bottom: 1px solid var(--borde-piedra);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .etiqueta-nodo {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gris-niebla);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Estilos requeridos para etiquetas semánticas: h1, h2, p y a */
+
+    h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      color: var(--oro-ocre);
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 0.45rem;
+    }
+
+    h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      color: var(--plata-hielo);
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      line-height: 1.35;
+      margin-top: 0.25rem;
+      margin-bottom: 1.1rem;
+    }
+
+    p {
+      font-family: 'Lora', Georgia, serif;
+      color: var(--nieve-texto);
+      font-size: 1.08rem;
+      line-height: 1.82;
+      margin-bottom: 1.2rem;
+    }
+
+    a {
+      font-family: 'Lora', Georgia, serif;
+      color: var(--oro-ocre);
+      font-size: 1.02rem;
+      text-decoration: none;
+      transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--oro-suave);
+    }
+
+    /* Imagen optimizada para web */
+    .figura-escenario {
+      margin: 1.5rem 0 1.8rem;
+    }
+
+    .figura-escenario img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid var(--borde-piedra);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    .figura-escenario figcaption {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--gris-niebla);
+      margin-top: 0.65rem;
+      text-align: center;
+    }
+
+    /* Reproductor embebido de ambiente */
+    .ambiente-multimedia {
+      margin: 2rem 0;
+      padding: 1.25rem;
+      background-color: rgba(12, 16, 22, 0.55);
+      border: 1px solid var(--borde-piedra);
+      border-radius: 8px;
+    }
+
+    .ambiente-multimedia h2 {
+      font-size: 1.05rem;
+      color: var(--oro-ocre);
+      margin-bottom: 0.5rem;
+    }
+
+    .ambiente-multimedia p {
+      font-size: 0.94rem;
+      color: var(--gris-niebla);
+      margin-bottom: 0.9rem;
+    }
+
+    .video-responsivo {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .video-responsivo iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .nota-enlace-externo {
+      margin-top: 0.7rem;
+      margin-bottom: 0;
+      font-size: 0.86rem;
+      color: var(--gris-niebla);
+    }
+
+    .nota-enlace-externo a {
+      font-size: 0.86rem;
+      text-decoration: underline;
+    }
+
+    /* Navegación de decisiones del hipertexto */
+    nav.decisiones {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--borde-piedra);
+    }
+
+    nav.decisiones h2 {
+      font-size: 1.1rem;
+      color: var(--plata-hielo);
+      margin-bottom: 1rem;
+    }
+
+    .lista-opciones {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .lista-opciones a {
+      display: block;
+      padding: 0.95rem 1.2rem;
+      background-color: var(--fondo-boton);
+      border: 1px solid var(--borde-piedra);
+      border-left: 3px solid var(--oro-ocre);
+      border-radius: 6px;
+      color: var(--oro-ocre);
+      font-size: 1.02rem;
+    }
+
+    .lista-opciones a:hover,
+    .lista-opciones a:focus-visible {
+      background-color: var(--fondo-boton-hover);
+      border-color: var(--oro-ocre);
+      color: var(--oro-suave);
+      transform: translateX(4px);
+    }
+
+    .navegacion-secundaria {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .navegacion-secundaria a {
+      font-size: 0.92rem;
+      color: var(--gris-niebla);
+      text-decoration: underline;
+    }
+
+    .navegacion-secundaria a:hover {
+      color: var(--oro-suave);
+    }
+
+    /* Pie de página con autoría y red social */
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--borde-piedra);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: var(--gris-niebla);
+      margin-bottom: 0.35rem;
+    }
+
+    footer a {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--oro-ocre);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.75rem;
+      }
+
+      .contenedor {
+        padding: 1.6rem 1.35rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <header>
+      <p class="etiqueta-nodo">Nodo 3 · Nivel 1</p>
+      <h1>La Voz de la Fortaleza Invernal</h1>
+      <h2>La sombra tras los muros</h2>
+    </header>
+
+    <main>
+      <article>
+        <p>Apartada bajo las galerías oscuras del edificio principal, Lady Jessica observa el enfrentamiento sin pestañear. Cuando la furia de Paul amenaza con desbordar el consejo, apenas mueve los labios: «Tranquilízate».</p>
+        <p>A través de las ventanas en arco se distinguen los espesos bosques blancos que rodean la ciudadela, tan vastos e implacables como la profecía que su orden sembró durante generaciones. No hay sorpresa en su rostro, solo cálculo: cada paso de su hijo dentro de esa fortaleza confirma que el muchacho de antes está desapareciendo para dejar lugar al mito.</p>
+      </article>
+
+      <nav class="decisiones" aria-label="Opciones narrativas">
+        <h2>Elige cómo continuar</h2>
+        <ul class="lista-opciones">
+          <li><a href="nodo5.html">→ Dejar que Paul quiebre la voluntad de los escépticos mediante sus visiones</a></li>
+          <li><a href="nodo6.html">→ Observar el destello metálico que Paul guarda junto al pecho</a></li>
+          <li><a href="nodo2.html">→ Volver al centro del tumulto donde las hojas de los cuchillos brillan</a></li>
+        </ul>
+        <div class="navegacion-secundaria">
+          <a href="index.html">← Volver al inicio (El salón del gran torreón)</a>
+        </div>
+      </nav>
+    </main>
+
+    <footer>
+      <p>Ficción interactiva desarrollada por <strong>Baltasar Moreno</strong></p>
+      <p>Instagram: <a href="https://www.instagram.com/balta_moreno/" target="_blank" rel="noopener noreferrer">@balta_moreno</a></p>
+    </footer>
+  </div>
+</body>
+</html>
